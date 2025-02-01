@@ -19,7 +19,7 @@ export const fetchItemDetails = async (itemId) => {
     const response = await axios.get(`${API_URL}/items/${itemId}`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching item details:', error);
+    console.error('Error fetching item detail:', error);
     throw error;
   }
 };
