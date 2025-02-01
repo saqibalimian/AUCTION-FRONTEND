@@ -59,4 +59,15 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_HUB_USERNAME }}/latest
 
+
+      - name: Deploy to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }} # Render API key
+        run: |
+          curl -X POST "https://api.render.com/deploy/srv-cuf2un5umphs73aqrpig?key=JpB5-9nU1dQ" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            --data-raw '{"clearCache": true}'
+
+    
     
