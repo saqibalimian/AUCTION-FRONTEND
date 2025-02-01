@@ -30,7 +30,7 @@ const AuctionDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    const socket = io("https://auction-backend-pvth.onrender.com", {
+    const socket = io(process.env.WS_URL, {
       transports: ["websocket"],
     
     });
