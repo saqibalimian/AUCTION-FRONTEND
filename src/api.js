@@ -4,7 +4,7 @@ import axios from 'axios';
 //const API_URL = 'https://auction-backend-pvth.onrender.com'; // Replace with your Render backend URL
 // Load environment variables from .env file
 const API_URL = process.env.REACT_APP_API_URL;
-console.log('API_URL:', API_URL);
+console.log('REACT_APP_API_URL:', API_URL);
 // Fetch all items
 export const fetchItems = async () => {
   try {
