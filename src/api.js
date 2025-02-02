@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'https://auction-backend-pvth.onrender.com'; // Replace with your Render backend URL
+//const API_URL = 'https://auction-backend-pvth.onrender.com'; // Replace with your Render backend URL
+// Load environment variables from .env file
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Fetch all items
 export const fetchItems = async () => {
@@ -32,8 +34,7 @@ export const placeBid = async (item_id, user_id, amount) => {
    
     return response.data;
   } catch (error) {
-    //console.error('Error fetching item details:', error);
-   // throw error;
+ 
     console.error('Error placing bid:', error.response ? error.response.data.message : error.message);
     throw new Error(error.response ? error.response.data.message : 'Error placing bid');
   }
